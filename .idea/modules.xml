@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/TweetMap.iml" filepath="$PROJECT_DIR$/TweetMap.iml" />
+      <module fileurl="file://$PROJECT_DIR$/TweetMapForAndroid.iml" filepath="$PROJECT_DIR$/TweetMapForAndroid.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
