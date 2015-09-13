@@ -16,19 +16,6 @@
 
 apply plugin: 'com.android.application'
 
-def loadConfiguration() {
-    def prop = new Properties()
-    prop.load(project.rootProject.file('gradle.properties').newDataInputStream())
-
-    println "Load configuration... ===>"
-    prop.each { p ->
-        println p
-    }
-    println "<==="
-
-    return new ConfigSlurper().parse(prop)
-}
-
 android {
     compileSdkVersion 22
     buildToolsVersion "22.0.1"
@@ -77,4 +64,31 @@ dependencies {
     compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.0-rc4'
     compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0-rc4'
     compile 'org.twitter4j:twitter4j-core:4.0.4'
+}
+
+
+def loadConfiguration() {
+    def prop = new Properties()
+
+    // ** ATTENTION! **
+    // レポジトリをcloneしたあとはプロジェクトルートディレクトリ直下に gradle.properties ファイルを作成してください. 
+    // gradle.propertiesにはTwitterとGoogle MapsのAPI Keyを下記要領に従って定義してください. 
+    //   https://github.com/TweetMap/TweetMapForAndroid#setup-configurations
+    if (project.rootProject.file('gradle.properties').exists()) {
+        prop.load(project.rootProject.file('gradle.properties').newDataInputStream())
+    } else {
+        // Fallback api keys
+        prop.setProperty "gmap.api.key", "UNDEFINED"
+        prop.setProperty "twitter.consumer.key", "UNDEFINED"
+        prop.setProperty "twitter.consumer.secretkey", "UNDEFINED"
+    }
+
+
+    println "Load configuration... ===>"
+    prop.each { p ->
+        println p
+    }
+    println "<==="
+
+    return new ConfigSlurper().parse(prop)
 }
