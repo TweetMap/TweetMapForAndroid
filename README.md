@@ -1,5 +1,32 @@
 # TweetMap
 
+## Setup configurations.
+
+TweetMapアプリはTwitter APIとGoogle Map APIを使用する.  
+これらのAPIを使用するにはAPI Keyをそれぞれ取得・設定する必要がある.  
+API Keyは`build.gradle`が`gradle.properties`を参照し,これをstring resourceに登録する.  
+設定するAPI Keyは個別に取得しておくこと.  
+各API Keyを`gradle.properties`に登録する方法は下記の通り. 
+
+ 1. Android Projectのルートディレクトリに`gradle.properties`ファイルを作成
+ 2. `gradle.properties`ファイルに下記のKey-Valueを登録する.
+
+    | key                        | description                  |
+    |----------------------------|------------------------------|
+    | gmap.api.key               | Google Map API Key           |
+    | twitter.consumer.key       | Twitter Consumer Key         |
+    | twitter.consumer.secretkey | Twitter Consumer Securet Key |
+
+example)
+```
+# Google API
+gmap.api.key=AIxxxxxxxxxxxxxxxxxxxxxxxxxxx
+
+# Twitter API
+twitter.consumer.key=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+twitter.consumer.secretkey=xxxxxxxxxxxxxxxxxxxxxx
+```
+
 ## Copyright
 
     Copyright 2015 TweetMap. All rights reserved.
