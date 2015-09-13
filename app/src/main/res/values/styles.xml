@@ -1,0 +1,60 @@
+<!--
+  ~ Copyright 2015 TweetMap
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <style name = "AppTheme" parent ="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="AppDialog" parent="Theme.AppCompat.Dialog">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+    <!-- Toolbar -->
+    <style name="toolbarTheme" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name = "colorPrimary" >@color/toolbar_background</item>
+        <!-- Status bar -->
+        <item name = "colorPrimaryDark" >@color/statusbar_background</item>
+        <!-- Text color -->
+        <item name="android:textColorPrimary">@color/toolbar_title</item>
+        <!-- Icon color -->
+        <item name="android:textColorSecondary">@color/toolbar_icon</item>
+        <!-- ActionMode -->
+        <item name = "windowActionModeOverlay" >true</item>
+    </style>
+
+    <style name="toolbarMenuTheme" parent="Theme.AppCompat.Light">
+        <item name="android:textColorPrimary">@color/toolbar_menu_text</item>
+    </style>
+
+    <style name="AppTheme.Button" parent="android:Widget.Material.Button">
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textAllCaps">false</item>
+    </style>
+
+    <style name="SearchDialog" parent="Theme.AppCompat.Light.Dialog">
+        <item name="colorPrimary">@color/gray</item>
+        <item name="colorPrimaryDark">@color/black</item>
+        <item name="colorAccent">@color/ghost_white</item>
+    </style>
+
+    <style name="SpinnerDropDownItemStyle" parent="android:Widget.Holo.Light.DropDownItem">
+        <item name="android:textColor">@color/black</item>
+    </style>
+
+</resources>

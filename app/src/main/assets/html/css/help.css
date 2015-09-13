@@ -1,0 +1,62 @@
+﻿body{
+background-color:#fff;
+color:#000;
+font-family:Helvetica,Geneva,Arial,sans-serif;
+line-height:1.6;
+}
+
+a:link {
+color: #a5002a;
+}
+a:visited {
+color: #a5002a;
+}
+a:hover {
+color: #a5002a;
+}
+a:active {
+color: #a5002a;
+}
+
+
+img{
+border:none;
+}
+
+
+#help_h1{
+color:#ffffff;
+background-color: #333333;
+background:url("../image/h2_bg.gif") repeat-x;
+background-position: top center;
+width:100%;
+min-height:54px;
+margin-top:10px;
+}
+
+h1{
+line-height:1.5;
+padding-left:10px;
+padding-top:17px;
+font-weight:bold;
+}
+
+h2{
+font-size:90%;
+display:block;
+color:#000000;
+background-color:#FFD700;
+padding: 10px;
+margin-top:20px;
+margin-bottom:10px;
+margin-left:2%;
+margin-right:2%;
+}
+
+.main{
+font-size:80%;
+margin-left:2%;
+margin-right:2%;
+}
+
+
