@@ -1,0 +1,80 @@
+/*
+ * Copyright 2015 TweetMap
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+apply plugin: 'com.android.application'
+
+def loadConfiguration() {
+    def prop = new Properties()
+    prop.load(project.rootProject.file('gradle.properties').newDataInputStream())
+
+    println "Load configuration... ===>"
+    prop.each { p ->
+        println p
+    }
+    println "<==="
+
+    return new ConfigSlurper().parse(prop)
+}
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22.0.1"
+
+    defaultConfig {
+        applicationId "jp.co.tweetmap"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 1
+        versionName "0.0.1"
+
+        ConfigObject config = loadConfiguration()
+        resValue "string", "google_maps_api_key", config.gmap.api.key
+        resValue "string", "twitter_consumer_key", config.twitter.consumer.key
+        resValue "string", "twitter_consumer_secret_key", config.twitter.consumer.secretkey
+    }
+
+    buildTypes {
+        debug {
+            // No specific
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+    }
+}
+
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:design:22.2.0'
+    compile 'com.android.support:appcompat-v7:22.2.1'
+    compile 'com.android.support:support-v4:22.2.1'
+    compile 'com.google.android.gms:play-services-maps:7.5.0'
+    compile 'com.fasterxml.jackson.core:jackson-core:2.6.0-rc4'
+    compile 'com.fasterxml.jackson.core:jackson-annotations:2.6.0-rc4'
+    compile 'com.fasterxml.jackson.core:jackson-databind:2.6.0-rc4'
+    compile 'org.twitter4j:twitter4j-core:4.0.4'
+}

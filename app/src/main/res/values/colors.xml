@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  ~ Copyright 2015 TweetMap
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <!-- Standard Color -->
+    <item name="blue" type="color">#FF33B5E5</item>
+    <item name="purple" type="color">#FFAA66CC</item>
+    <item name="green" type="color">#FF99CC00</item>
+    <item name="orange" type="color">#FFFFBB33</item>
+    <item name="red" type="color">#FFFF4444</item>
+    <item name="darkblue" type="color">#FF0099CC</item>
+    <item name="darkpurple" type="color">#FF9933CC</item>
+    <item name="darkgreen" type="color">#FF669900</item>
+    <item name="darkorange" type="color">#FFFF8800</item>
+    <item name="darkred" type="color">#FFCC0000</item>
+    <item name="white" type="color">#FFFFFFFF</item>
+    <item name="black" type="color">#FF000000</item>
+    <item name="gray" type="color">#FFbebebe</item>
+
+    <!-- Original Color -->
+    <item name="ghost_white" type="color">#FFf8f8ff</item>
+
+
+    <!-- Toolbar title color -->
+    <item name="toolbar_background" type="color">#FFFBB542</item>
+    <item name="statusbar_background" type="color">#FFFF8800</item>
+    <item name="toolbar_title" type="color">#FFFFFFFF</item>
+    <item name="toolbar_icon" type="color">#FFFFFFFF</item>
+
+    <!-- Toolbar menu color -->
+    <item name="toolbar_menu_background" type="color">#FFFFFFFF</item>
+    <item name="toolbar_menu_text" type="color">#FF000000</item>
+
+    <!-- Drawer menu color -->
+    <item name="drawer_background" type="color">#FFFFFFFF</item>
+    <item name="drawer_text" type="color">#FF000000</item>
+    <item name="drawer_icon" type="color">#FFFF6600</item>
+
+    <!-- Button color -->
+    <color name="button_color">#FFfbb542</color>
+    <color name="highlight_button_color">#FFFF8800</color>
+
+</resources>

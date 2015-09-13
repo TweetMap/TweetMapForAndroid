@@ -1,0 +1,116 @@
+<!--
+  ~ Copyright 2015 TweetMap
+  ~
+  ~ Licensed under the Apache License, Version 2.0 (the "License");
+  ~ you may not use this file except in compliance with the License.
+  ~ You may obtain a copy of the License at
+  ~
+  ~     http://www.apache.org/licenses/LICENSE-2.0
+  ~
+  ~ Unless required by applicable law or agreed to in writing, software
+  ~ distributed under the License is distributed on an "AS IS" BASIS,
+  ~ WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  ~ See the License for the specific language governing permissions and
+  ~ limitations under the License.
+  -->
+
+<resources>
+    <!-- APP Name -->
+    <string name="app_name">つぶやきマップ</string>
+
+    <!-- ToolBar Title -->
+    <string name="top_title_bar_name">遅延情報</string>
+    <string name="init_title_bar_name">つぶやきマップ初期設定</string>
+    <string name="search_title_bar_name">駅検索</string>
+    <string name="app_info_title_bar_name">アプリ情報</string>
+    <string name="oss_title_bar_name">オープンソースライセンス</string>
+    <string name="help_title_bar_name">ヘルプ</string>
+
+    <!-- Search Station Hint -->
+    <string name="search_hint">駅名を入力してください</string>
+
+    <!-- Toolbar Button -->
+    <string name="action_search">検索</string>
+
+    <!-- Drawer Toggle -->
+    <string name="drawer_open">開く</string>
+    <string name="drawer_close">閉じる</string>
+
+    <!-- Drawer Header -->
+    <string name="drawer_header">つぶやきマップ初期設定\n（ここをタップしてください）</string>
+    <string name="drawer_header_toast">既に連携済です</string>
+
+    <!-- Drawer Menu -->
+    <string name="drawer_menu_app_info">アプリ情報</string>
+    <string name="drawer_menu_oss">オープンソースライセンス</string>
+    <string name="drawer_menu_app_help">ヘルプ</string>
+    <string name="drawer_menu_about_tweetmap">ツイートマップについて</string>
+
+    <!-- Tab Titles -->
+    <string name="first_tab_title">30分以内</string>
+    <string name="second_tab_title">1時間以内</string>
+    <string name="third_tab_title">24時間以内</string>
+
+    <!-- Info Window -->
+    <string name="previous_station">前の駅</string>
+    <string name="next_station">次の駅</string>
+    <string name="info_window_loading">検索中</string>
+
+    <!-- Tap Maerker -->
+    <string name="error_twitter_not_oauth">Twitterアカウントと連携してください</string>
+
+    <!-- Twitter Info Loading ProgressDialog -->
+    <string name="twitter_info_loading_msg">連携中...</string>
+
+    <!-- Station Info Searching ProgressDialog -->
+    <string name="station_info_searching_msg">該当する駅を検索中...</string>
+
+    <!-- Twitter List Dialog -->
+    <string name="twitter_info_empty_msg">遅延情報はありませんでした</string>
+
+    <!-- GPS Alert Dialog -->
+    <string name="gps_alert_dlg_title">位置情報サービスが無効です</string>
+    <string name="gps_alert_dlg_body">つぶやきマップでは現在地情報を利用します。\n位置情報へのアクセスをオンにしてください。</string>
+    <string name="gps_alert_ckb">次回から表示しない</string>
+    <string name="gps_alert_yes_button">設定する</string>
+    <string name="gps_alert_no_button">設定しない</string>
+
+    <!-- Station Search Dialog -->
+    <string name="station_search_dlg_title">駅検索</string>
+    <string name="station_search_dlg_areas">エリア</string>
+    <string name="station_search_dlg_prefectures">都道府県</string>
+    <string name="station_search_dlg_lines">路線</string>
+    <string name="station_search_dlg_stations">駅名</string>
+    <string name="station_search_dlg_button">検索実行</string>
+
+    <!-- Twitter Callback URL -->
+    <string name="twitter_callback_url">oauth://twitter4j</string>
+
+    <!-- Twitter OAuth Page -->
+    <string name="twitter_oauth_page_body">つぶやきマップのご利用にはTwitterアカウントと連携する必要があります。Twitterアカウントと連携しない場合、つぶやきを表示することができません。</string>
+    <string name="twitter_oauth_start_button">連携する</string>
+
+    <!-- Twitter OAuth dialog -->
+    <string name="dialog_message_text">処理中...</string>
+
+    <!-- Twitter OAuth Result Toast -->
+    <string name="toast_oauth_complete_text">連携しました</string>
+    <string name="toast_oauth_failed_text">連携出来ませんでした</string>
+
+    <!-- Shared Preference -->
+    <string name="shared_pref_name">twitter_access_token</string>
+    <string name="shared_pref_key_twitter_access_token">twitter_access_token</string>
+    <string name="shared_pref_key_twitter_access_token_secret">twitter_access_token_secret</string>
+
+    <!-- Google Play Service Update -->
+    <string name="google_play_services_update">このアプリの実行には、Google Play開発者サービスの更新が必要です。\nGoogle Playから更新して下さい。</string>
+
+    <!-- APP Info -->
+    <string name="app_info_name">アプリケーション名</string>
+    <string name="app_info_provider">提供者</string>
+    <string name="app_provider">TweetMap Developers.</string>
+    <string name="app_info_url">https://github.com/TweetMap</string>
+    <string name="app_info_version">バージョン</string>
+    <string name="app_info_button_oss">オープンソースライセンス</string>
+
+</resources>
