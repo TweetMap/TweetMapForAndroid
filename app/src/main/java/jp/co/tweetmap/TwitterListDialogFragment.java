@@ -26,7 +26,7 @@ import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 
-import jp.co.util.TwitterListAdapter;
+import jp.co.tweetmap.util.TwitterListAdapter;
 
 /**
  * Dialog Fragment for TweetList..

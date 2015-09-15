@@ -29,7 +29,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 
-import jp.co.util.LogUtil;
+import jp.co.tweetmap.util.LogUtil;
 
 /**
  * Activity for App information screen.
