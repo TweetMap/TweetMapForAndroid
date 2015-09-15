@@ -1,0 +1,20 @@
+general:
+  build_dir: ./
+machine:
+  java:
+    version: openjdk7
+  environment:
+    ANDROID_HOME: /usr/local/android-sdk-linux
+dependencies:
+  override:
+    - echo y | android update sdk --no-ui --filter "android-22,build-tools-22.0.1"
+test:
+  override:
+    - ./gradlew assembleDebug
+    - cp -r TweetMapForAndroid/build/outputs $CIRCLE_ARTIFACTS
+# deployment:
+#  master:
+#    branch: master
+#    commands:
+#      - ./gradlew :app:assembleDebug
+#      - ./gradlew :app:uploadDeployGateDebug
