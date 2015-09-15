@@ -1,5 +1,8 @@
 # TweetMap
 
+[![Circle CI](https://circleci.com/gh/TweetMap/TweetMapForAndroid/tree/master.svg?style=svg)](https://circleci.com/gh/TweetMap/TweetMapForAndroid/tree/master)
+
+
 ## Setup configurations.
 
 TweetMapアプリはTwitter APIとGoogle Map APIを使用する.  
