@@ -50,17 +50,17 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-import jp.co.util.CustomInfoAdapter;
+import jp.co.tweetmap.util.CustomInfoAdapter;
 
-import jp.co.util.LogUtil;
-import jp.co.util.MapUtil;
-import jp.co.util.StationInfo;
-import jp.co.util.StationInfoLoader;
-import jp.co.util.StationInfoParser;
-import jp.co.util.TweeterStatusLoader;
-import jp.co.util.TwitterListAdapter;
-import jp.co.util.TwitterStatusItem;
-import jp.co.util.TwitterUtils;
+import jp.co.tweetmap.util.LogUtil;
+import jp.co.tweetmap.util.MapUtil;
+import jp.co.tweetmap.util.StationInfo;
+import jp.co.tweetmap.util.StationInfoLoader;
+import jp.co.tweetmap.util.StationInfoParser;
+import jp.co.tweetmap.util.TweeterStatusLoader;
+import jp.co.tweetmap.util.TwitterListAdapter;
+import jp.co.tweetmap.util.TwitterStatusItem;
+import jp.co.tweetmap.util.TwitterUtils;
 
 /**
  * Fragment for displaying map.

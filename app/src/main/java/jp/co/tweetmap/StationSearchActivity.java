@@ -52,10 +52,10 @@ import java.net.URLEncoder;
 import java.util.ArrayList;
 import java.util.List;
 
-import jp.co.util.LogUtil;
-import jp.co.util.MapUtil;
-import jp.co.util.StationInfo;
-import jp.co.util.StationInfoParser;
+import jp.co.tweetmap.util.LogUtil;
+import jp.co.tweetmap.util.MapUtil;
+import jp.co.tweetmap.util.StationInfo;
+import jp.co.tweetmap.util.StationInfoParser;
 
 /**
  * Activity for search station screen.
