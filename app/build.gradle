@@ -71,11 +71,12 @@ def loadConfiguration() {
     def prop = new Properties()
 
     // ** ATTENTION! **
-    // レポジトリをcloneしたあとはプロジェクトルートディレクトリ直下に gradle.properties ファイルを作成してください. 
-    // gradle.propertiesにはTwitterとGoogle MapsのAPI Keyを下記要領に従って定義してください. 
+    // レポジトリをcloneしたあとはプロジェクトルートディレクトリ直下に project.properties ファイルを作成してください. 
+    // project.propertiesにはTwitterとGoogle MapsのAPI Keyを下記要領に従って定義してください. 
     //   https://github.com/TweetMap/TweetMapForAndroid#setup-configurations
-    if (project.rootProject.file('gradle.properties').exists()) {
-        prop.load(project.rootProject.file('gradle.properties').newDataInputStream())
+    File f = project.rootProject.file('project.properties')
+    if (f.exists()) {
+        prop.load(f.newDataInputStream())
     } else {
         // Fallback api keys
         prop.setProperty "gmap.api.key", "UNDEFINED"
