@@ -11,20 +11,20 @@ API Keyは`build.gradle`が`project.properties`を参照し,これをstring reso
  1. Android Projectのルートディレクトリに`gradle.properties`ファイルを作成
  2. `project.properties`ファイルに下記のKey-Valueを登録する.
 
-    | key                        | description                  |
-    |----------------------------|------------------------------|
-    | gmap.api.key               | Google Map API Key           |
-    | twitter.consumer.key       | Twitter Consumer Key         |
-    | twitter.consumer.secretkey | Twitter Consumer Securet Key |
+    | key                        | description                 |
+    |----------------------------|-----------------------------|
+    | gmap_api_key               | Google Map API Key          |
+    | twitter_consumer.key       | Twitter Consumer Key        |
+    | twitter_consumer.secretkey | Twitter Consumer Secret Key |
 
 example)
 ```
 # Google API
-gmap.api.key=AIxxxxxxxxxxxxxxxxxxxxxxxxxxx
+gmap_api_key=AIxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 # Twitter API
-twitter.consumer.key=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
-twitter.consumer.secretkey=xxxxxxxxxxxxxxxxxxxxxx
+twitter_consumer_key=xxxxxxxxxxxxxxxxxxxxxxxxxxxx
+twitter_consumer_secretkey=xxxxxxxxxxxxxxxxxxxxxx
 ```
 
 ## Copyright
