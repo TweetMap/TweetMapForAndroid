@@ -28,9 +28,9 @@ android {
         versionName "0.0.1"
 
         ConfigObject config = loadConfiguration()
-        resValue "string", "google_maps_api_key", config.gmap.api.key
-        resValue "string", "twitter_consumer_key", config.twitter.consumer.key
-        resValue "string", "twitter_consumer_secret_key", config.twitter.consumer.secretkey
+        resValue "string", "google_maps_api_key", config.gmap_api_key
+        resValue "string", "twitter_consumer_key", config.twitter_consumer_key
+        resValue "string", "twitter_consumer_secret_key", config.twitter_consumer_secretkey
     }
 
     buildTypes {
@@ -76,6 +76,20 @@ dependencies {
 def loadConfiguration() {
     def prop = new Properties()
 
+    final def PROPERTY_KEYS = [
+            "gmap_api_key",
+            "twitter_consumer_key",
+            "twitter_consumer_secretkey",
+    ]
+
+    // Setup default properties
+    // 後述するproject.propertiesが定義されない場合はEnvironment variablesが参照される. 
+    // Environment variablesもない場合は"UNDEFINE"がデフォルト値として設定される.
+    PROPERTY_KEYS.each { k ->
+        String envVar = System.getenv(k)
+        prop.setProperty k, envVar == null ? "UNDEFINE" : envVar
+    }
+
     // ** ATTENTION! **
     // レポジトリをcloneしたあとはプロジェクトルートディレクトリ直下に project.properties ファイルを作成してください. 
     // project.propertiesにはTwitterとGoogle MapsのAPI Keyを下記要領に従って定義してください. 
@@ -84,18 +98,13 @@ def loadConfiguration() {
     if (f.exists()) {
         prop.load(f.newDataInputStream())
     } else {
-        // Fallback api keys
-        prop.setProperty "gmap.api.key", "UNDEFINED"
-        prop.setProperty "twitter.consumer.key", "UNDEFINED"
-        prop.setProperty "twitter.consumer.secretkey", "UNDEFINED"
+        
     }
-
-
-    println "Load configuration... ===>"
+    
+    println "Load configuration..."
     prop.each { p ->
-        println p
+        println "  " + p
     }
-    println "<==="
 
     return new ConfigSlurper().parse(prop)
 }
