@@ -19,6 +19,7 @@ package jp.co.tweetmap.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.support.annotation.VisibleForTesting;
 
 import jp.co.tweetmap.R;
 import twitter4j.Twitter;
@@ -36,11 +37,11 @@ public class TwitterUtils {
      *                              Class constants                                      *
      *************************************************************************************/
     /** Access Token */
-    private static final String ACCESS_TOKEN = "access_token";
+    @VisibleForTesting static final String ACCESS_TOKEN = "access_token";
     /** Access Token Secret */
-    private static final String ACCESS_TOKEN_SECRET = "token_secret";
+    @VisibleForTesting static final String ACCESS_TOKEN_SECRET = "token_secret";
     /** Name of the preference to save the Access Token and Secret */
-    private static final String PREF_NAME = "twitter_access_token";
+    @VisibleForTesting static final String PREF_NAME = "twitter_access_token";
 
     /**
      * Gets the Twitter instance. Access token is automatically set if it is saved.
