@@ -59,8 +59,8 @@ import com.google.android.gms.common.GooglePlayServicesUtil;
 import java.io.IOException;
 import java.net.URL;
 
-import jp.co.util.LogUtil;
-import jp.co.util.TwitterUtils;
+import jp.co.tweetmap.util.LogUtil;
+import jp.co.tweetmap.util.TwitterUtils;
 import twitter4j.Twitter;
 import twitter4j.TwitterException;
 import twitter4j.User;
