@@ -11,7 +11,7 @@ API Keyは`build.gradle`が`project.properties`を参照し,これをstring reso
 設定するAPI Keyは個別に取得しておくこと.  
 各API Keyを`project.properties`に登録する方法は下記の通り. 
 
- 1. Android Projectのルートディレクトリに`gradle.properties`ファイルを作成
+ 1. Android Projectのルートディレクトリに`project.properties`ファイルを作成
  2. `project.properties`ファイルに下記のKey-Valueを登録する.
 
     | key                        | description                 |
