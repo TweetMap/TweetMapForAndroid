@@ -11,7 +11,7 @@ dependencies:
 test:
   override:
     - ./gradlew assembleDebug
-    - cp -r TweetMapForAndroid/build/outputs $CIRCLE_ARTIFACTS
+    - cp -r TweetMapForAndroid/app/build/outputs $CIRCLE_ARTIFACTS
 # deployment:
 #  master:
 #    branch: master
