@@ -28,7 +28,7 @@ import android.view.WindowManager;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
-import jp.co.util.LogUtil;
+import jp.co.tweetmap.util.LogUtil;
 
 /**
  * Activity for App information screen.

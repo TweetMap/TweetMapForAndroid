@@ -14,29 +14,56 @@
  * limitations under the License.
  */
 
-package jp.co.util;
+package jp.co.tweetmap.util;
+
+import java.io.IOException;
+import android.util.Log;
+import com.fasterxml.jackson.databind.JsonNode;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Log output control for the utility
+ * Convert a JSON string to JsonNode object..
  */
-public class LogUtil {
+public class ParseJson {
 
     /*************************************************************************************
-     *                              Class constants                                      *
+     *                              Class variables                                      *
      *************************************************************************************/
-    /** Log switch */
-    private static final boolean debug = true;
+    protected String content;
 
 
     /*************************************************************************************
      *                                  Methods                                          *
      *************************************************************************************/
-    /**
-     * Check whether to debug log output
+    /** Convert a JSON string to JsonNode object.
      *
-     * @return true if output the debug log.
+     * @param str JSON string.
+     * @return JsonNode object.
      */
-    public static boolean isDebug() {
-        return debug;
+    protected JsonNode getJsonNode(String str) {
+        try {
+            return new ObjectMapper().readTree(str);
+        } catch (IOException e) {
+            Log.d(getClass().getName(), e.getMessage());
+        }
+        return null;
+    }
+
+    /**
+     * Read a JSON string.
+     *
+     * @param str JSON string.
+     */
+    public void loadJson(String str) {
+        // N.O.P
+    }
+
+    /**
+     * Get content.
+     *
+     * @return content string.
+     */
+    public String getContent() {
+        return this.content;
     }
 }

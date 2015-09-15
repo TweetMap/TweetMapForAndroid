@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package jp.co.util;
+package jp.co.tweetmap.util;
 
 import java.util.ArrayList;
 import java.util.Iterator;
