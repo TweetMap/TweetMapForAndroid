@@ -19,6 +19,7 @@ package jp.co.tweetmap.util;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
+import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
 
 import jp.co.tweetmap.R;
@@ -69,7 +70,7 @@ public class TwitterUtils {
      * @param context {@link Context}, not {@code null}.
      * @param accessToken {@link AccessToken}.
      */
-    public static void storeAccessToken(Context context, AccessToken accessToken) {
+    public static void storeAccessToken(@NonNull Context context, @NonNull AccessToken accessToken) {
         SharedPreferences preferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         Editor editor = preferences.edit();
         editor.putString(ACCESS_TOKEN, accessToken.getToken());
