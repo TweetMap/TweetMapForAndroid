@@ -110,6 +110,10 @@ public class TwitterUtilsRoboTest {
       AccessToken token = TwitterUtils.loadAccessToken(context);
       assertNotNull("保存されたアクセストークンを読み込めていない", token);
     }
+//    {
+//      // Nullチェック
+//      TwitterUtils.loadAccessToken(null);
+//    }
   }
 
   @Test @SmallTest @SuppressLint("CommitPrefEdits")

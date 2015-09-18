@@ -84,7 +84,7 @@ public class TwitterUtils {
      * @param context {@link Context}, not {@code null}.
      * @return access token to use Twitter API.
      */
-    public static AccessToken loadAccessToken(Context context) {
+    public static AccessToken loadAccessToken(@NonNull Context context) {
         SharedPreferences preferences = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE);
         String token = preferences.getString(ACCESS_TOKEN, null);
         String tokenSecret = preferences.getString(ACCESS_TOKEN_SECRET, null);
