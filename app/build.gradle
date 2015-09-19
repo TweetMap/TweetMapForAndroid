@@ -111,13 +111,13 @@ def loadConfiguration() {
 
     } else {
         // Circle CI ビルドプロセス
-        def prUserName = System.getenv('CIRCLE_PR_USERNAME')
+        String prUserName = System.getenv('CIRCLE_PR_USERNAME')
 
         println "CIRCLE_PR_USERNAME:" + prUserName
         println "CIRCLE_PR_REPONAME:" + System.getenv('CIRCLE_PR_REPONAME')
         println "CIRCLE_PR_NUMBER:" + System.getenv('CIRCLE_PR_NUMBER')
 
-        if ((prUserName != null && prUserName.length > 0)) {
+        if ((prUserName != null && prUserName.length() > 0)) {
             ptinrln "PullRequest契機ビルドのためダミープロパティを設定する."
 
             // PullRequest契機でのビルドではダミー値を使用する.
