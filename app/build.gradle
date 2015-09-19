@@ -118,7 +118,7 @@ def loadConfiguration() {
         println "CIRCLE_PR_NUMBER:" + System.getenv('CIRCLE_PR_NUMBER')
 
         if ((prUserName != null && prUserName.length() > 0)) {
-            ptinrln "PullRequest契機ビルドのためダミープロパティを設定する."
+            println "PullRequest契機ビルドのためダミープロパティを設定する."
 
             // PullRequest契機でのビルドではダミー値を使用する.
             // NOTE:
