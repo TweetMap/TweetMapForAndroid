@@ -32,6 +32,12 @@ android {
         resValue "string", "twitter_consumer_key", config.twitter_consumer_key
         resValue "string", "twitter_consumer_secret_key", config.twitter_consumer_secretkey
     }
+    
+    signingConfigs {
+        debug {
+            storeFile rootProject.file('./debug.keystore')
+        }
+    }
 
     buildTypes {
         debug {
