@@ -10,7 +10,7 @@ dependencies:
     - echo y | android update sdk --no-ui --filter "android-22,build-tools-22.0.1"
 test:
   override:
-    - ./gradlew assembleDebug -PdisablePreDex
+    - ./gradlew clean assembleDebug -PdisablePreDex
     - cp -r ./app/build/outputs $CIRCLE_ARTIFACTS
 # deployment:
 #  master:
