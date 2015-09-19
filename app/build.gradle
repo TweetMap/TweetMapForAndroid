@@ -86,23 +86,41 @@ def loadConfiguration() {
             "twitter_consumer_secretkey",
     ]
 
-    // Setup default properties
-    //   後述するproject.propertiesが定義されない場合はEnvironment variablesが参照される. 
-    //   Environment variablesもない場合は"UNDEFINE"がデフォルト値として設定される.
-    PROPERTY_KEYS.each { k ->
-        String envVar = System.getenv(k)
-        prop.setProperty k, envVar == null ? "UNDEFINE" : envVar
+    // IDE からのビルドと、コマンドラインからのビルドで処理を分けたい場合の書き方
+    // Android Studio からのビルドでは、コマンドラインオプションに -Pandroid.injected.invoked.from.ide=true が渡される
+    def buildOpt = project.properties['android.injected.invoked.from.ide']
+    def isIdeBuild = (buildOpt == null || buildOpt.equalsIgnoreCase("true"));
+
+    if (isIdeBuild) {
+        // ** ATTENTION! **
+        //   レポジトリをcloneしたあとはプロジェクトルートディレクトリ直下に project.properties ファイルを作成してください. 
+        //   project.propertiesにはTwitterとGoogle MapsのAPI Keyを下記要領に従って定義してください. 
+        //   https://github.com/TweetMap/TweetMapForAndroid#setup-configurations
+        File f = project.rootProject.file('project.properties')
+        if (f.exists()) {
+            prop.load(f.newDataInputStream())
+        } else {
+            println "Please create project.properties"
+        }
+        
+    } else {
+        // Circle CI ビルドプロセス
+        //  CircleCIサーバで定義されている環境変数の値を設定.
+        PROPERTY_KEYS.each { k ->
+            String envVar = System.getenv(k)
+            if (envVar != null && envVar.length() > 0) {
+                prop.setProperty k, envVar
+            }
+        }
     }
 
-    // ** ATTENTION! **
-    //   レポジトリをcloneしたあとはプロジェクトルートディレクトリ直下に project.properties ファイルを作成してください. 
-    //   project.propertiesにはTwitterとGoogle MapsのAPI Keyを下記要領に従って定義してください. 
-    //   https://github.com/TweetMap/TweetMapForAndroid#setup-configurations
-    File f = project.rootProject.file('project.properties')
-    if (f.exists()) {
-        prop.load(f.newDataInputStream())
-    } else {
-        // N.O.P. 前述のデフォルトプロパティが参照される.
+    // 必須環境変数の不足確認
+    PROPERTY_KEYS.each { k ->
+        if (prop.getProperty(k) == null) {
+            throw new GradleException("ビルドに必須のプロパティ " + k + " が定義されていません.\n" +
+                "IDEビルドの場合は project.propeties に必須プロパティを設定してください.\n" +
+                "サーバビルドの場合は環境変数に必須プロパティを設定してください.")
+        }
     }
     
     // NOTE:
