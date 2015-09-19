@@ -21,6 +21,7 @@ import android.content.SharedPreferences;
 import android.content.SharedPreferences.Editor;
 import android.support.annotation.NonNull;
 import android.support.annotation.VisibleForTesting;
+import android.text.TextUtils;
 
 import jp.co.tweetmap.R;
 import twitter4j.Twitter;
@@ -102,6 +103,8 @@ public class TwitterUtils {
      * @return {@code true} if access token is stored, {@code false} otherwise.
      */
     public static boolean hasAccessToken(Context context) {
-        return loadAccessToken(context) != null;
+        AccessToken token = loadAccessToken(context);
+        return token != null && 
+            !TextUtils.isEmpty(token.getToken()) && !TextUtils.isEmpty(token.getTokenSecret());
     }
 }
