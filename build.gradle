@@ -52,4 +52,9 @@ project.ext {
     // see http://tools.android.com/tech-docs/new-build-system/tips#TOC-Improving-Build-Server-performance.
     // CIサーバなどでは -PdisablePreDex をビルドオプションにつける. preDexが省略されてビルドが速くなる
     preDexLibs = !project.hasProperty('disablePreDex')
+
+    // IDE からのビルドと、コマンドラインからのビルドで処理を分けたい場合の書き方
+    // Android Studio からのビルドでは、コマンドラインオプションに -Pandroid.injected.invoked.from.ide=true が渡される
+    isIdeBuild = project.properties['android.injected.invoked.from.ide']
+    isIdeBuild = (isIdeBuild == null || isIdeBuild.equalsIgnoreCase("true"));
 }
