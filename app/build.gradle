@@ -32,7 +32,7 @@ android {
         resValue "string", "twitter_consumer_key", config.twitter_consumer_key
         resValue "string", "twitter_consumer_secret_key", config.twitter_consumer_secretkey
     }
-    
+
     signingConfigs {
         debug {
             storeFile rootProject.file('./debug.keystore')
@@ -111,12 +111,15 @@ def loadConfiguration() {
 
     } else {
         // Circle CI ビルドプロセス
-        def pullRequestsBuild = System.getenv('CI_PULL_REQUESTS')
-        def pullRequestBuild = System.getenv('CI_PULL_REQUEST')
+        def prUserName = System.getenv('CIRCLE_PR_USERNAME')
 
-        if ((pullRequestsBuild != null && pullRequestsBuild.length > 0) ||
-                (pullRequestBuild != null && pullRequestBuild.length > 0)) {
-            ptinrln "PullRequest契機ビルドのためダミープロパティを設定する. PRs=" + pullRequestsBuild + ", PR=" + pullRequestBuild
+        println "CIRCLE_PR_USERNAME:" + prUserName
+        println "CIRCLE_PR_REPONAME:" + System.getenv('CIRCLE_PR_REPONAME')
+        println "CIRCLE_PR_NUMBER:" + System.getenv('CIRCLE_PR_NUMBER')
+
+        if ((prUserName != null && prUserName.length > 0)) {
+            ptinrln "PullRequest契機ビルドのためダミープロパティを設定する."
+
             // PullRequest契機でのビルドではダミー値を使用する.
             // NOTE:
             //   Unsafe fork PR builds
