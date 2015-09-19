@@ -95,7 +95,7 @@ def loadConfiguration() {
     // IDE からのビルドと、コマンドラインからのビルドで処理を分けたい場合の書き方
     // Android Studio からのビルドでは、コマンドラインオプションに -Pandroid.injected.invoked.from.ide=true が渡される
     def buildOpt = project.properties['android.injected.invoked.from.ide']
-    def isIdeBuild = (buildOpt == null || buildOpt.equalsIgnoreCase("true"));
+    def isIdeBuild = (buildOpt != null && buildOpt.equalsIgnoreCase("true"));
 
     if (isIdeBuild) {
         // ** ATTENTION! **
