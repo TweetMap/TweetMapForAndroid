@@ -13,6 +13,7 @@ test:
     - ./gradlew clean assembleDebug -PdisablePreDex
     - cp -r ./app/build/outputs $CIRCLE_ARTIFACTS
   post:
+    - ./gradlew jacocoTestReport
     - cp -r ./app/build/reports/* $CIRCLE_TEST_REPORTS/
 # deployment:
 #  master:
