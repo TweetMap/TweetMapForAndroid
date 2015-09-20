@@ -40,8 +40,10 @@ subprojects {
     // preDexオプション
     project.plugins.whenPluginAdded { plugin ->
         if ("com.android.build.gradle.AppPlugin".equals(plugin.class.name)) {
+            println "dexOptions preDexLibraries=" + rootProject.ext.preDexLibs
             project.android.dexOptions.preDexLibraries = rootProject.ext.preDexLibs
         } else if ("com.android.build.gradle.LibraryPlugin".equals(plugin.class.name)) {
+            println "dexOptions preDexLibraries=" + rootProject.ext.preDexLibs
             project.android.dexOptions.preDexLibraries = rootProject.ext.preDexLibs
         }
     }
