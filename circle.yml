@@ -5,6 +5,11 @@ machine:
     version: openjdk7
   environment:
     ANDROID_HOME: /usr/local/android-sdk-linux
+    # Your build hit the 4G memory limit
+    # Out of memory errors in Android builds
+    # https://circleci.com/docs/oom
+    _JAVA_OPTIONS: "-Xms512m -Xmx1024m"
+    GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
 dependencies:
   override:
     - echo y | android update sdk --no-ui --all --filter "extra-google-m2repository,extra-android-m2repository,android-23,build-tools-23.0.1"
