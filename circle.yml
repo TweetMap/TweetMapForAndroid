@@ -10,6 +10,8 @@ machine:
     # https://circleci.com/docs/oom
     _JAVA_OPTIONS: "-Xms512m -Xmx1024m"
     GRADLE_OPTS: '-Dorg.gradle.jvmargs="-Xmx2048m -XX:+HeapDumpOnOutOfMemoryError"'
+    # Issue 104305:	Allow the user to increase the ADB timeout
+    ADB_INSTALL_TIMEOUT: 100 
 dependencies:
   override:
     - echo y | android update sdk --no-ui --all --filter "extra-google-m2repository,extra-android-m2repository,android-23,build-tools-23.0.1"
